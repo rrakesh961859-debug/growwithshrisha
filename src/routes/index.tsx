@@ -6,9 +6,10 @@ import mentorAsset from "../assets/shirisha-karnati.jpg.asset.json";
 import resultOne from "../assets/student-result-1.jpg.asset.json";
 import resultTwo from "../assets/student-result-2.jpg.asset.json";
 import resultThree from "../assets/student-result-3.jpg.asset.json";
+import resultFour from "../assets/student-result-4.png.asset.json";
 
 const INSTAGRAM = "https://www.instagram.com/growwithshirisha_/";
-const results = [resultTwo.url, resultOne.url, resultThree.url];
+const results = [resultTwo.url, resultOne.url, resultThree.url, resultFour.url];
 
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
