@@ -13,3 +13,4 @@
 
 - Keep the mentorship offer as one focused scrolling home experience; legal information uses dedicated routes for shareability and clarity.
 - Use Lovable Asset pointer imports for all uploaded mentor and student imagery so repository source stays lightweight.
+- Use the exact electric-blue, deep-charcoal, white, and muted-gray brand palette across every page for visual consistency.

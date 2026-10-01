@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { ArrowDown, ArrowUpRight, Check, ChevronDown, Instagram, Menu, Play, Sparkles, X, Zap } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Check, ChevronDown, Instagram, Menu, Sparkles, X } from "lucide-react";
 import { SiteButton } from "../components/SiteButton";
 import mentorAsset from "../assets/shirisha-karnati.jpg.asset.json";
 import resultOne from "../assets/student-result-1.jpg.asset.json";
@@ -57,13 +57,13 @@ function HomePage() {
 
       <section className="hero" id="top">
         <div className="hero-copy">
-          <div className="eyebrow"><span className="pulse-dot" /> LIVE 1-ON-1 MENTORSHIP</div>
-          <h1>LEARN DIGITAL SKILLS.<br /><em>BUILD YOUR</em><br />ONLINE INCOME.</h1>
+          <div className="eyebrow hero-eyebrow"><span className="pulse-dot" /> LIVE 1-ON-1 MENTORSHIP</div>
+          <h1>MAKE YOUR FIRST <em>DOLLAR</em> FROM YOUR PHONE. NO INVESTMENT.</h1>
           <p>Learn practical digital skills you can start from your phone — with live 1-on-1 mentorship from Shirisha Karnati.</p>
           <div className="skill-line"><span>Clipping</span><i /> <span>AI Videos</span><i /> <span>Digital Products</span></div>
           <div className="hero-actions">
             <a className="site-button" href="#programs"><span>Choose your mentorship</span><ArrowDown size={18} /></a>
-            <a className="text-link" href="#skills">See what you'll learn <ArrowDown size={17} /></a>
+             <a className="text-link" href="#programs">See what you'll learn <ArrowDown size={17} /></a>
           </div>
         </div>
         <div className="hero-visual">
@@ -88,23 +88,16 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="section skills-section" id="skills">
-        <div className="section-heading split-heading"><div><p className="eyebrow">PRACTICAL. CURRENT. ACTIONABLE.</p><h2>THE SKILLS<br />YOU'LL BUILD</h2></div><p>Build practical skills for today's creator economy, with direct help at every step.</p></div>
-        <div className="skills-grid">
-          {[
-            ["01", "CLIPPING", "Create short-form content from your phone.", <Play key="i" />],
-            ["02", "AI VIDEOS", "Use AI tools to create engaging video content.", <Sparkles key="i" />],
-            ["03", "DIGITAL PRODUCTS", "Understand how digital products can be created and sold online.", <Zap key="i" />],
-            ["04", "ORGANIC SELLING", "Learn organic methods to promote and sell digital products.", <Instagram key="i" />],
-          ].map(([n, title, copy, icon]) => <article className="skill-card" key={String(n)}><div className="skill-icon">{icon}</div><span>{n}</span><h3>{title}</h3><p>{copy}</p></article>)}
-        </div>
-      </section>
-
       <section className="section programs" id="programs">
         <div className="section-heading centered"><p className="eyebrow">TWO WAYS TO START</p><h2>CHOOSE YOUR PATH</h2><p>Start with the skills you need. Upgrade when you're ready.</p></div>
         <div className="pricing-grid">
-          <Plan name="BASIC MENTORSHIP" price="₹7,000" badge="START HERE" description="Build your foundation with practical digital skills you can start from your phone." features={["Clipping from your phone", "AI video creation", "No investment required to get started", "Beginner-friendly guidance", "Practical implementation", "Live 1-on-1 mentorship"]} />
-          <Plan name="PRO MENTORSHIP" price="₹15,000" badge="MOST COMPLETE" featured description="Learn multiple digital skills and build a stronger online income foundation with personal mentorship." features={["Everything in Basic", "Clipping from your phone", "AI video creation", "Digital products", "Organic digital-product selling", "How to start from your phone", "Practical implementation", "Live 1-on-1 mentorship", "Direct personal guidance"]} />
+          <Plan name="BASIC MENTORSHIP" price="₹7,000" badge="START HERE" description="Build your foundation with practical digital skills you can start from your phone." groups={[
+            { heading: "CLIPPING", items: ["How to choose the best campaign", "How to edit videos from your phone", "How to warm up your accounts", "The viral format"] },
+            { heading: "AI VIDEO CREATION", items: ["How to make AI videos", "How to write prompts", "How to generate perfect videos"] },
+          ]} features={["No investment required to get started", "Beginner-friendly guidance", "Practical implementation", "Live 1-on-1 mentorship"]} />
+          <Plan name="PRO MENTORSHIP" price="₹15,000" badge="MOST COMPLETE" featured description="Learn multiple digital skills and build a stronger online income foundation with personal mentorship." groups={[
+            { heading: "DIGITAL PRODUCT SELLING", items: ["Digital product creation", "Website design", "Facebook & Instagram ads", "Ad creative generation", "Meesho affiliate marketing with AI videos", "Become a content creator with us — we'll help you build your personal brand"] },
+          ]} features={["Everything in Basic", "Clipping from your phone", "AI video creation", "Digital products", "Organic digital-product selling", "How to start from your phone", "Practical implementation", "Live 1-on-1 mentorship", "Direct personal guidance"]} />
         </div>
         <p className="pricing-note">These are live 1-on-1 mentorship programs — not pre-recorded classes.</p>
       </section>
@@ -125,12 +118,6 @@ function HomePage() {
         <div className="timeline">
           {[["01", "CHOOSE YOUR PLAN", "Select the mentorship that fits your goals."], ["02", "GET STARTED", "Complete the onboarding process."], ["03", "LEARN LIVE", "Get practical guidance through live 1-on-1 mentorship."], ["04", "IMPLEMENT", "Apply what you learn and get guidance along the way."]].map(([n, title, copy]) => <article key={n}><span>{n}</span><h3>{title}</h3><p>{copy}</p></article>)}
         </div>
-      </section>
-
-      <section className="personal-section">
-        <p className="eyebrow">WHY 1-ON-1?</p><h2>NOT ANOTHER<br />RECORDED COURSE.</h2><h3>YOU GET PERSONAL GUIDANCE.</h3>
-        <p>Instead of watching hours of recorded videos and figuring everything out yourself, you'll get direct mentorship and practical guidance.</p>
-        <div className="personal-grid">{[["PERSONAL ATTENTION", "Guidance based on your current level."], ["PRACTICAL LEARNING", "Focus on implementation, not just theory."], ["DIRECT GUIDANCE", "Ask questions and get help while building."]].map(([title, copy]) => <div key={title}><Check /><h4>{title}</h4><p>{copy}</p></div>)}</div>
       </section>
 
       <section className="section mentor" id="about">
@@ -181,6 +168,6 @@ function HomePage() {
   );
 }
 
-function Plan({ name, price, badge, description, features, featured = false }: { name: string; price: string; badge: string; description: string; features: string[]; featured?: boolean }) {
-  return <article className={featured ? "plan-card plan-featured" : "plan-card"}><div className="plan-top"><span>{badge}</span>{featured && <Sparkles />}</div><h3>{name}</h3><strong>{price}</strong><p>{description}</p><ul>{features.map(feature => <li key={feature}><Check size={17} />{feature}</li>)}</ul><SiteButton href={INSTAGRAM} target="_blank" rel="noreferrer">DM us now — {name.split(" ")[0]}</SiteButton></article>;
+function Plan({ name, price, badge, description, features, groups, featured = false }: { name: string; price: string; badge: string; description: string; features: string[]; groups: { heading: string; items: string[] }[]; featured?: boolean }) {
+  return <article className={featured ? "plan-card plan-featured" : "plan-card"}><div className="plan-top"><span>{badge}</span>{featured && <Sparkles />}</div><h3>{name}</h3><strong>{price}</strong><p>{description}</p><div className="plan-content">{groups.map(group => <section className="plan-group" key={group.heading}><h4>{group.heading}</h4><ul>{group.items.map(item => <li key={item}><Check size={17} />{item}</li>)}</ul></section>)}<ul className="plan-extras">{features.map(feature => <li key={feature}><Check size={17} />{feature}</li>)}</ul></div><SiteButton href={INSTAGRAM} target="_blank" rel="noreferrer">DM us now — {name.split(" ")[0]}</SiteButton></article>;
 }
