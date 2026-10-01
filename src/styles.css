@@ -109,6 +109,7 @@ button { font: inherit; }
 .plan-card ul { display: grid; gap: 13px; margin: 0; padding: 0; list-style: none; }
 .plan-extras { padding-top: 22px !important; border-top: 1px solid var(--border); }
 .plan-card li { display: flex; align-items: center; gap: 10px; font-size: .88rem; }.plan-card li svg { color: var(--primary); flex: none; }
+.plan-card li.plan-highlight { margin-bottom: 5px; padding: 13px 14px; border: 1px solid color-mix(in oklab, var(--primary) 65%, var(--border)); border-radius: 7px; color: var(--foreground); background: color-mix(in oklab, var(--primary) 15%, var(--card)); font-weight: 800; box-shadow: 0 0 24px color-mix(in oklab, var(--primary) 13%, transparent); }
 .plan-card .site-button { margin-top: auto; }.pricing-note, .disclaimer { max-width: 780px; margin: 30px auto 0; color: var(--muted-foreground); font-size: .76rem; line-height: 1.65; text-align: center; }
 .comparison { padding-top: 45px; }.comparison-table { overflow: hidden; border: 1px solid var(--border); border-radius: 14px; }
 .comparison-row { display: grid; grid-template-columns: minmax(180px, 1.4fr) 1fr 1fr; min-height: 72px; align-items: center; padding: 0 30px; border-bottom: 1px solid var(--border); }.comparison-row:last-child { border-bottom: 0; }
