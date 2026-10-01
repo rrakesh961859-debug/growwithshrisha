@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { ArrowDown, Check, ChevronDown, Instagram, Menu, Play, Sparkles, X, Zap } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Check, ChevronDown, Instagram, Menu, Play, Sparkles, X, Zap } from "lucide-react";
 import { SiteButton } from "../components/SiteButton";
 import mentorAsset from "../assets/shirisha-karnati.jpg.asset.json";
 import resultOne from "../assets/student-result-1.jpg.asset.json";
