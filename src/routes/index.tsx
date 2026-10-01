@@ -8,7 +8,7 @@ import resultTwo from "../assets/student-result-2.jpg.asset.json";
 import resultThree from "../assets/student-result-3.jpg.asset.json";
 
 const INSTAGRAM = "https://www.instagram.com/growwithshirisha_/";
-const results = [resultOne.url, resultTwo.url, resultThree.url];
+const results = [resultTwo.url, resultOne.url, resultThree.url];
 
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
@@ -169,5 +169,5 @@ function HomePage() {
 }
 
 function Plan({ name, price, badge, description, features, groups, featured = false }: { name: string; price: string; badge: string; description: string; features: string[]; groups: { heading: string; items: string[] }[]; featured?: boolean }) {
-  return <article className={featured ? "plan-card plan-featured" : "plan-card"}><div className="plan-top"><span>{badge}</span>{featured && <Sparkles />}</div><h3>{name}</h3><strong>{price}</strong><p>{description}</p><div className="plan-content">{groups.map(group => <section className="plan-group" key={group.heading}><h4>{group.heading}</h4><ul>{group.items.map(item => <li key={item}><Check size={17} />{item}</li>)}</ul></section>)}<ul className="plan-extras">{features.map(feature => <li key={feature}><Check size={17} />{feature}</li>)}</ul></div><SiteButton href={INSTAGRAM} target="_blank" rel="noreferrer">DM us now — {name.split(" ")[0]}</SiteButton></article>;
+  return <article className={featured ? "plan-card plan-featured" : "plan-card"}><div className="plan-top"><span>{badge}</span>{featured && <Sparkles />}</div><h3>{name}</h3><strong>{price}</strong><p>{description}</p><div className="plan-content">{groups.map(group => <section className="plan-group" key={group.heading}><h4>{group.heading}</h4><ul>{group.items.map(item => <li key={item}><Check size={17} />{item}</li>)}</ul></section>)}<ul className="plan-extras">{features.map(feature => <li className={feature === "Everything in Basic" ? "plan-highlight" : undefined} key={feature}><Check size={17} />{feature}</li>)}</ul></div><SiteButton href={INSTAGRAM} target="_blank" rel="noreferrer">DM us now — {name.split(" ")[0]}</SiteButton></article>;
 }
